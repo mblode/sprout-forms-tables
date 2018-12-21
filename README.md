@@ -1,12 +1,8 @@
-# Sprout Forms Tables plugin for Craft CMS 3.x
+# Tables Field for Sprout Forms (Craft CMS 3)
 
-Custom Tables field for Sprout Forms plugin
+Tables field for Sprout Forms
 
 ![Screenshot](resources/img/plugin-logo.png)
-
-## Requirements
-
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
 ## Installation
 
@@ -22,22 +18,6 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Sprout Forms Tables.
 
-## Sprout Forms Tables Overview
-
--Insert text here-
-
-## Configuring Sprout Forms Tables
-
--Insert text here-
-
-## Using Sprout Forms Tables
-
--Insert text here-
-
-## Sprout Forms Tables Roadmap
-
-Some things to do, and ideas for potential features:
-
-* Release it
+-----
 
 Brought to you by [Matthew Blode](https://matthewblode.com/)

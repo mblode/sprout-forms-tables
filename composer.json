@@ -1,6 +1,6 @@
 {
     "name": "mblode/sprout-forms-tables",
-    "description": "Custom Tables field for Sprout Forms plugin",
+    "description": "Tables field for Sprout Forms",
     "type": "craft-plugin",
     "version": "1.0.1",
     "keywords": [
