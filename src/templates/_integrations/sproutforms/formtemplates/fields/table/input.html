@@ -1,0 +1,57 @@
+{%- set id = renderingOptions.id ?? name %}
+{%- set cols = field.cols ? field.cols : null %}
+{%- set class = renderingOptions.class ?? name %}
+{%- set required = field.required ? true : false %}
+{%- set hasInstructions = field.instructions ? true : false %}
+{%- set value = value ? value : null %}
+
+{%- set dataAttributes = null %}
+{%- set data = renderingOptions.data ?? null %}
+{%- for key, dataValue in data %}
+    {%- set dataAttributes = dataAttributes ~ ' data-'~key~'="'~dataValue~'"' %}
+{%- endfor -%}
+
+{% set cols = null %}
+
+{% if field.cols | length %}
+    {% set cols = field.cols %}
+{% endif %}
+
+{% set size = 0 %}
+
+{% if field.size | length %}
+    {% set size = field.size %}
+{% endif %}
+
+<div class="sprout-forms-tables">
+    <table style="width: 100%">
+        <thead>
+            <tr>
+                {% for col in cols %}
+                    <th>{{ col.label }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if size > 0 %}
+                {% for row in 1 .. size %}
+                    <tr data-id="{{ row }}">
+                        {% for col in cols %}
+                            <td>
+                                <input type="text"
+                                    {%- if name %} name="{{ name }}[{{ row }}][{{ col.value }}]"{% endif %}
+                                    {%- if id %} id="{{ id }}"{% endif %}
+                                    {%- if class %} class="{{ class }} sprout-forms-tables-input"{% endif %}
+                                    {%- if required %} required aria-required="true"{% endif %}
+                                    {%- if hasInstructions %} aria-describedby="{{ field.getNamespace() }}-{{ id }}-instructions"{% endif %}
+                                >
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+

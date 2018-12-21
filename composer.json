@@ -1,0 +1,40 @@
+{
+    "name": "mblode/sprout-forms-tables",
+    "description": "Sprout Forms Tables",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "sprout forms tables"
+    ],
+    "support": {
+        "docs": "https://github.com/mblode/sprout-forms-tables/blob/master/README.md",
+        "issues": "https://github.com/mblode/sprout-forms-tables/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Blode",
+            "homepage": "https://matthewblode.com/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "mblode\\sproutformstables\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Sprout Forms Tables",
+        "handle": "sprout-forms-tables",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/mblode/sprout-forms-tables/master/CHANGELOG.md",
+        "class": "mblode\\sproutformstables\\SproutFormsTables"
+    }
+}

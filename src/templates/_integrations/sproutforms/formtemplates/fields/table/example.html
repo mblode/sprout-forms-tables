@@ -1,0 +1,21 @@
+{% import "_includes/forms" as forms %}
+
+{% set cols = null %}
+
+{% if field.cols | length %}
+    {% set cols = field.cols %}
+{% endif %}
+
+<div class="sproutforms-table">
+    <table style="width:100%">
+        <thead>
+            <tr>
+                {% for col in cols %}
+                    <th>{{ col.label }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+    </table>
+</div>
+
+{% do view.registerAssetBundle("mblode\\sproutformstables\\web\\assets\\table\\TableAsset") %}

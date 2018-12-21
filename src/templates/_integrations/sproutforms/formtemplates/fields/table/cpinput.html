@@ -1,0 +1,37 @@
+{% set outputId = 'fields-sproutforms-table-value-'~field.id %}
+
+{% set cols = null %}
+
+{% if field.cols | length %}
+    {% set cols = field.cols %}
+{% endif %}
+
+ <div class="sproutforms-table">
+    <output id="sproutforms-table-value-{{ field.id }}">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    {% for col in cols %}
+                        <th>{{ col.label }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for row in value %}
+                    <tr>
+                        {% for col in row %}
+                            <td>
+                                {% if col | length %}
+                                    {{ col }}
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </output>
+</div>
+
+{% do view.registerAssetBundle("mblode\\sproutformstables\\web\\assets\\table\\TableAsset") %}

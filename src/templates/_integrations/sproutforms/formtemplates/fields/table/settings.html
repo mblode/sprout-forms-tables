@@ -1,0 +1,31 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.editableTableField({
+    label: "Table",
+    instructions: 'Define the table contents.',
+    id: 'cols',
+    name: 'cols',
+    addRowLabel: 'Add a row',
+    value: field.cols,
+    cols: {
+        label: {
+            heading: 'Table Column',
+            type: 'singleline',
+            autopopulate: 'value',
+        },
+        value: {
+            heading: 'Value',
+            type: 'singleline',
+            class: 'code'
+        },
+    },
+    rows: field.cols,
+}) }}
+
+{{ forms.textField({
+    label: "Size",
+    id: 'size',
+    name: 'size',
+    value: field.size,
+    size: 5,
+}) }}
