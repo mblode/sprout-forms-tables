@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-viewBox="0 0 68.6 54" style="enable-background:new 0 0 68.6 54;" xml:space="preserve">
-<g id="icon-mask">
-<path d="M37,43.9l-9.5,9.5c-0.8,0.8-2.1,0.8-2.8,0L0.6,29.3c-0.8-0.8-0.8-2.1,0-2.8L10,17c0.8-0.8,2.1-0.8,2.8,0L37,41.1
-C37.8,41.9,37.8,43.2,37,43.9z"/>
-<path d="M24.7,53.4l-9.5-9.5c-0.8-0.8-0.8-2.1,0-2.8L55.8,0.6c0.8-0.8,2.1-0.8,2.8,0L68,10c0.8,0.8,0.8,2.1,0,2.8L27.5,53.4
-C26.7,54.2,25.5,54.2,24.7,53.4z"/>
-</g>
+<svg width="266px" height="254px" viewBox="0 0 266 254" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-mask</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-mask" fill-rule="nonzero">
+            <g id="Group">
+                <rect id="Rectangle" stroke="#000000" stroke-width="20" x="10" y="10" width="246" height="234" rx="24"></rect>
+                <rect id="Rectangle-Copy-4" fill="#000000" x="9" y="13" width="249" height="35"></rect>
+                <polygon id="Rectangle-Copy-2" fill="#000000" transform="translate(91.500000, 129.500000) rotate(-270.000000) translate(-91.500000, -129.500000) " points="-30 121 213 121 213 138 -30 138"></polygon>
+                <polygon id="Rectangle-Copy-3" fill="#000000" transform="translate(174.500000, 129.500000) rotate(-270.000000) translate(-174.500000, -129.500000) " points="53 121 296 121 296 138 53 138"></polygon>
+                <g id="Group-2" transform="translate(17.000000, 98.000000)" fill="#000000">
+                    <rect id="Rectangle-Copy" x="0" y="67" width="233" height="17"></rect>
+                    <rect id="Rectangle-Copy-6" x="0" y="134" width="233" height="17"></rect>
+                    <rect id="Rectangle" x="0" y="0" width="233" height="17"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

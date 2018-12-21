@@ -2,7 +2,7 @@
 /**
  * Sprout Forms Tables plugin for Craft CMS 3.x
  *
- * Sprout Forms Tables
+ * Custom Tables field for Sprout Forms plugin
  *
  * @link      https://matthewblode.com/
  * @copyright Copyright (c) 2018 Matthew Blode

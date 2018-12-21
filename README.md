@@ -1,6 +1,6 @@
 # Sprout Forms Tables plugin for Craft CMS 3.x
 
-Sprout Forms Tables
+Custom Tables field for Sprout Forms plugin
 
 ![Screenshot](resources/img/plugin-logo.png)
 
