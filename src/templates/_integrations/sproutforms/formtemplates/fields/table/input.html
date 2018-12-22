@@ -28,7 +28,7 @@
         <thead>
             <tr>
                 {% for col in cols %}
-                    <th>{{ col.label }}</th>
+                    <th style="text-align: left;">{{ col.label }}</th>
                 {% endfor %}
             </tr>
         </thead>
@@ -40,7 +40,7 @@
                         {% for col in cols %}
                             <td>
                                 <input type="text"
-                                    {%- if name %} name="{{ name }}[row-{{ row }}][{{ col.value }}]"{% endif %}
+                                    {%- if name %} name="{{ name }}[{{ row }}][{{ col.value }}]"{% endif %}
                                     {%- if id %} id="{{ id }}"{% endif %}
                                     {%- if class %} class="{{ class }} sprout-forms-tables-input"{% endif %}
                                     {%- if required %} required aria-required="true"{% endif %}

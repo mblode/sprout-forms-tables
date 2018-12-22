@@ -20,3 +20,7 @@
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
 }
+
+.sproutforms-table table tr:last-child td {
+    border-bottom: 1px solid #dee2e6;
+}

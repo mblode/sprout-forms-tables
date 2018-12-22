@@ -1,29 +1,30 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.editableTableField({
-    label: "Table" | t,
-    instructions: 'Define the table contents.' | t,
-    id: 'cols',
-    name: 'cols',
-    addRowLabel: 'Add a row' | t,
-    value: field.cols,
-    cols: {
+    label: "Table Columns" | t,
+    instructions: 'Define the columns your table should have.' | t,
+    id: 'columns',
+    name: 'columns',
+    addRowLabel: 'Add a column' | t,
+    value: field.columns,
+    columns: {
         label: {
-            heading: 'Table Column' | t,
+            heading: 'Column Heading' | t,
             type: 'singleline',
             autopopulate: 'value',
         },
         value: {
-            heading: 'Value' | t,
+            heading: 'Handle' | t,
             type: 'singleline',
             class: 'code'
-        },
+        }
     },
-    rows: field.cols,
+    rows: field.columns,
 }) }}
 
 {{ forms.textField({
     label: "Number of rows" | t,
+    instructions: 'The number of rows the field has.' | t,
     id: 'size',
     name: 'size',
     value: field.size,

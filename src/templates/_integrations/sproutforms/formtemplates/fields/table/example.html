@@ -6,6 +6,12 @@
     {% set cols = field.cols %}
 {% endif %}
 
+{% set size = 0 %}
+
+{% if field.size | length %}
+    {% set size = field.size %}
+{% endif %}
+
 <div class="sproutforms-table">
     <table style="width:100%">
         <thead>
@@ -15,6 +21,18 @@
                 {% endfor %}
             </tr>
         </thead>
+
+        {% if size > 0 %}
+            {% for row in 1 .. size %}
+                <tr data-id="{{ row }}">
+                    {% for col in cols %}
+                        <td>
+
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endif %}
     </table>
 </div>
 
