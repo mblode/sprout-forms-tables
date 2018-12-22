@@ -1,0 +1,9 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.lightswitchField({
+    id: 'decodeValue',
+    name: 'decodeValue',
+    label: 'JSON Decode Table Values' | t,
+    on: settings.decodeValue,
+    instructions: 'JSON Decode the table value that is used on the notification email. (Only turn on with a custom notification email template).' | t
+}) }}

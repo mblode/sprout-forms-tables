@@ -66,7 +66,11 @@ class Table extends FormField implements PreviewableFieldInterface
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
-        $value = json_decode($value, true);
+        $settings = Craft::$app->getPlugins()->getPlugin('sprout-forms-tables')->getSettings();
+
+        if (!$settings->decodeValue) {
+            $value = json_decode($value, true);
+        }
 
         return Craft::$app->getView()->renderTemplate('sprout-forms-tables/_integrations/sproutforms/formtemplates/fields/table/cpinput',
             [
@@ -127,24 +131,14 @@ class Table extends FormField implements PreviewableFieldInterface
         return Craft::getAlias('@mblode/sproutformstables/templates/_integrations/sproutforms/formtemplates/fields/');
     }
 
-
     public function normalizeValue($value, ElementInterface $element = null)
     {
         // String value when retrieved from db
         if (is_string($value)) {
-            $tableArray = json_decode($value, true);
+            $settings = Craft::$app->getPlugins()->getPlugin('sprout-forms-tables')->getSettings();
 
-            $value = [];
-
-            foreach($tableArray as $item) {
-                $row = "";
-                foreach($item as $key => $val) {
-                    if (strlen($val) > 0) {
-                        $row .= $key . ': ' . $val . ', ';
-                    }
-                }
-                $row = substr($row, 0, -2);
-                array_push($value, $row);
+            if ($settings->decodeValue) {
+                $value = json_decode($value, true);
             }
         }
 

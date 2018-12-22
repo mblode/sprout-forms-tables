@@ -2,7 +2,7 @@
     "name": "mblode/sprout-forms-tables",
     "description": "Tables Field for Sprout Forms",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "craft",
         "cms",
@@ -32,7 +32,7 @@
     "extra": {
         "name": "Tables Field for Sprout Forms",
         "handle": "sprout-forms-tables",
-        "hasCpSettings": false,
+        "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/mblode/sprout-forms-tables/master/CHANGELOG.md",
         "class": "mblode\\sproutformstables\\SproutFormsTables"
