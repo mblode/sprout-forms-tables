@@ -1,8 +1,12 @@
+<img src="resources/img/plugin-logo.png" alt="Icon" width=72 height=72>
+
 # Tables Field for Sprout Forms (Craft CMS 3)
 
-Tables Field for Sprout Forms
+### Custom tables field that integrates with Sprout Forms.
 
-![Screenshot](resources/img/plugin-logo.png)
+This custom field plugin integrates with Barrel Strength's Sprout Forms plugin to provide table field. Simply drag and drop into your forms, choose a few columns names and you are good to go.
+
+![Output](screenshots/output.png)
 
 ## Installation
 
