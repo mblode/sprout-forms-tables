@@ -1,0 +1,135 @@
+{%- set entry = object -%}
+{%- set form = entry.getForm() -%}
+
+<!doctype html>
+<html>
+<head>
+    <title>{{ siteName }}</title>
+</head>
+<body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" offset="0">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td valign="top">
+            <table>
+                <tr>
+                    <td valign="top" style="width:600px;">
+
+                        {% if email.defaultBody|length %}
+                        <table>
+                            <tr>
+                                <td valign="top" style="width:600px;">
+
+                                    <p>{{ email.defaultBody|nl2br }}</p>
+
+                                </td>
+                            </tr>
+                        </table>
+                        {% endif %}
+
+                        <table>
+                            <tr>
+                                <td style="border-top:1px solid #eee;border-bottom:1px solid #eee;background-color:#fefefe;width:600px;">
+
+                                    {% set tabs = entry.getFieldLayout().getTabs() %}
+
+                                    {% for tab in tabs %}
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <p><em>{{ "Form submission received from:"|t('sprout-forms') }} {{ siteName }}</em></p>
+
+                                                    <p><span style="text-transform: uppercase;"><strong>{{ form.name }}</strong></span></p>
+
+                                                    {% set fields = tab.getFields() %}
+
+                                                    {% for field in fields %}
+
+                                                        {% set value = attribute(entry, field.handle) %}
+
+                                                        {% if loop.first and tabs|length > 1 %}
+                                                            <p>
+                                                                <strong>{{ tab.name }}</strong>
+                                                            </p>
+                                                        {% endif %}
+
+                                                        <p>
+                                                        <strong>{{ field.name }}</strong>
+                                                        <br/>
+
+                                                        {% if field.getFieldInputFolder() == 'table' %}
+
+                                                            {% set cols = null %}
+
+                                                            {% if field.cols | length %}
+                                                                {% set cols = field.cols %}
+                                                            {% endif %}
+
+                                                            <table width="100%" cellspacing="0" cellpadding="12" border="0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        {% for col in cols %}
+                                                                            <th align="left" style="border-bottom: 2px solid #dee2e6; border-top: 1px solid #dee2e6;">{{ col.label }}</th>
+                                                                        {% endfor %}
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody>
+                                                                    {% for row in value %}
+                                                                        <tr>
+                                                                            {% for col in row %}
+                                                                                <td style="border-top: 1px solid #dee2e6;">{{ col }}</td>
+                                                                            {% endfor %}
+                                                                        </tr>
+                                                                    {% endfor %}
+                                                                </tbody>
+                                                            </table>
+
+                                                        {% elseif value is not iterable and value is not empty %}
+
+                                                            {{ value|nl2br }}
+
+                                                        {% elseif value is iterable %}
+
+                                                            <ul style="margin-left:0;padding-left:10px;">
+                                                                {% for item in value %}
+                                                                    {% if item is not empty %}
+                                                                    <li>{{ item }}</li>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </ul>
+
+                                                        {% else %}
+
+                                                            <em>{{ "No response"|t('sprout-forms') }}</em>
+
+                                                        {% endif %}
+                                                        </p>
+
+                                                    {% endfor %}
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td {% if not loop.last %}style="border-top:1px solid #eee;background-color:#fefefe;
+                                width:600px;"{% endif %}>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    {% endfor %}
+
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+            <!-- END TEMPLATE CONTAINER -->
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>
