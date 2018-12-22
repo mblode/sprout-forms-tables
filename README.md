@@ -4,7 +4,7 @@
 
 ### Custom tables field that integrates with Sprout Forms.
 
-This custom field plugin integrates with Barrel Strength's Sprout Forms plugin to provide a table field in your forms. Simply drag and drop into your forms, choose the table column headings and you are good to go.
+This plugin adds a custom table field to Barrel Strength's Sprout Forms. Simply drag and drop into your forms, choose the table column headings and you are good to go.
 
 ![Output](screenshots/output.png)
 
