@@ -1,6 +1,6 @@
 # Tables Field for Sprout Forms (Craft CMS 3)
 
-Tables field for Sprout Forms
+Tables Field for Sprout Forms
 
 ![Screenshot](resources/img/plugin-logo.png)
 
