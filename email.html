@@ -58,17 +58,17 @@
 
                                                         {% if field.getFieldInputFolder() == 'table' %}
 
-                                                            {% set columns = null %}
+                                                            {% set cols = null %}
 
-                                                            {% if field.columns | length %}
-                                                                {% set columns = field.columns %}
+                                                            {% if field.cols | length %}
+                                                                {% set cols = field.cols %}
                                                             {% endif %}
 
                                                             <table width="100%" cellspacing="0" cellpadding="12" border="0">
                                                                 <thead>
                                                                     <tr>
-                                                                        {% for column in columns %}
-                                                                            <th align="left" style="border-bottom: 2px solid #dee2e6; border-top: 1px solid #dee2e6;">{{ column.label }}</th>
+                                                                        {% for col in cols %}
+                                                                            <th align="left" style="border-bottom: 2px solid #dee2e6; border-top: 1px solid #dee2e6;">{{ col.label }}</th>
                                                                         {% endfor %}
                                                                     </tr>
                                                                 </thead>
@@ -76,8 +76,8 @@
                                                                 <tbody>
                                                                     {% for row in value %}
                                                                         <tr>
-                                                                            {% for column in row %}
-                                                                                <td style="border-top: 1px solid #dee2e6;">{{ column }}</td>
+                                                                            {% for col in row %}
+                                                                                <td style="border-top: 1px solid #dee2e6;">{{ col }}</td>
                                                                             {% endfor %}
                                                                         </tr>
                                                                     {% endfor %}

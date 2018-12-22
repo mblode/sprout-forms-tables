@@ -1,13 +1,13 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.editableTableField({
-    label: "Table Columns" | t,
-    instructions: 'Define the columns your table should have.' | t,
-    id: 'columns',
-    name: 'columns',
+    label: "Table cols" | t,
+    instructions: 'Define the cols your table should have.' | t,
+    id: 'cols',
+    name: 'cols',
     addRowLabel: 'Add a column' | t,
-    value: field.columns,
-    columns: {
+    value: field.cols,
+    cols: {
         label: {
             heading: 'Column Heading' | t,
             type: 'singleline',
@@ -19,7 +19,7 @@
             class: 'code'
         }
     },
-    rows: field.columns,
+    rows: field.cols,
 }) }}
 
 {{ forms.textField({
