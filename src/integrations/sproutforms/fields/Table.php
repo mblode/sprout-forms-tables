@@ -38,7 +38,7 @@ class Table extends FormField implements PreviewableFieldInterface
     /**
      * @return string
      */
-    public function getSvgIconPath()
+    public function getSvgIconPath(): string
     {
         return '@sproutformstablesicons/table.svg';
     }
@@ -87,7 +87,7 @@ class Table extends FormField implements PreviewableFieldInterface
      * @throws \Twig_Error_Loader
      * @throws \yii\base\Exception
      */
-    public function getExampleInputHtml()
+    public function getExampleInputHtml(): string
     {
         return Craft::$app->getView()->renderTemplate('sprout-forms-tables/_integrations/sproutforms/formtemplates/fields/table/example',
             [
@@ -101,7 +101,7 @@ class Table extends FormField implements PreviewableFieldInterface
      * @throws \Twig_Error_Loader
      * @throws \yii\base\Exception
      */
-    public function getFrontEndInputHtml($value, array $renderingOptions = null): string
+    public function getFrontEndInputHtml($value, array $renderingOptions = null): \Twig_Markup
     {
         $rendered = Craft::$app->getView()->renderTemplate(
             'table/input',
@@ -126,7 +126,7 @@ class Table extends FormField implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
-    public function getTemplatesPath()
+    public function getTemplatesPath(): string
     {
         return Craft::getAlias('@mblode/sproutformstables/templates/_integrations/sproutforms/formtemplates/fields/');
     }
