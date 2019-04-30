@@ -4,6 +4,7 @@ use Craft;
 use craft\helpers\Template as TemplateHelper;
 use craft\base\ElementInterface;
 use craft\base\PreviewableFieldInterface;
+use yii\db\Schema;
 use barrelstrength\sproutforms\base\FormField;
 /**
  * Class Table
@@ -16,18 +17,22 @@ class Table extends FormField implements PreviewableFieldInterface
      * @var string
      */
     public $cssClasses;
+
     /**
      * @var int|null
      */
     public $cols;
+
      /**
      * @var int|null The size of the field
      */
     public $size = 1;
+
     /**
      * @var string|null
      */
     public $titleText;
+
     /**
      * @inheritdoc
      */
@@ -35,6 +40,15 @@ class Table extends FormField implements PreviewableFieldInterface
     {
         return Craft::t('sprout-forms-tables', 'Table');
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentColumnType(): string
+    {
+        return Schema::TYPE_INTEGER;
+    }
+
     /**
      * @return string
      */
@@ -42,6 +56,7 @@ class Table extends FormField implements PreviewableFieldInterface
     {
         return '@sproutformstablesicons/table.svg';
     }
+
     /**
      * @inheritdoc
      *
@@ -58,6 +73,7 @@ class Table extends FormField implements PreviewableFieldInterface
         );
         return $rendered;
     }
+
     /**
      * @@inheritdoc
      *
@@ -81,6 +97,7 @@ class Table extends FormField implements PreviewableFieldInterface
             ]
         );
     }
+
     /**
      * @inheritdoc
      *
@@ -95,6 +112,7 @@ class Table extends FormField implements PreviewableFieldInterface
             ]
         );
     }
+
     /**
      * @inheritdoc
      *
@@ -114,6 +132,7 @@ class Table extends FormField implements PreviewableFieldInterface
         );
         return TemplateHelper::raw($rendered);
     }
+
     /**
      * @inheritdoc
      */
@@ -123,6 +142,7 @@ class Table extends FormField implements PreviewableFieldInterface
         $rules[] = [['size'], 'integer'];
         return $rules;
     }
+    
     /**
      * @inheritdoc
      */
