@@ -46,7 +46,7 @@ class Table extends FormField implements PreviewableFieldInterface
      */
     public function getContentColumnType(): string
     {
-        return Schema::TYPE_INTEGER;
+        return Schema::TYPE_TEXT;
     }
 
     /**
@@ -142,7 +142,7 @@ class Table extends FormField implements PreviewableFieldInterface
         $rules[] = [['size'], 'integer'];
         return $rules;
     }
-    
+
     /**
      * @inheritdoc
      */
