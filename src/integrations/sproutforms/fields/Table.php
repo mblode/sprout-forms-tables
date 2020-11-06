@@ -6,6 +6,7 @@ use craft\base\ElementInterface;
 use craft\base\PreviewableFieldInterface;
 use yii\db\Schema;
 use barrelstrength\sproutforms\base\FormField;
+use barrelstrength\sproutforms\elements\Entry;
 /**
  * Class Table
  *
@@ -119,7 +120,7 @@ class Table extends FormField implements PreviewableFieldInterface
      * @throws \Twig_Error_Loader
      * @throws \yii\base\Exception
      */
-    public function getFrontEndInputHtml($value, array $renderingOptions = null): \Twig_Markup
+    public function getFrontEndInputHtml($value, Entry $entry, array $renderingOptions = null): \Twig_Markup
     {
         $rendered = Craft::$app->getView()->renderTemplate(
             'table/input',
@@ -127,6 +128,7 @@ class Table extends FormField implements PreviewableFieldInterface
                 'name' => $this->handle,
                 'value' => $value,
                 'field' => $this,
+                'entry' => $entry,
                 'renderingOptions' => $renderingOptions
             ]
         );

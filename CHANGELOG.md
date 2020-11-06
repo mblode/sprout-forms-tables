@@ -11,3 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.0.10 - 2020-3-21
 ### Added
 - Better formatting of tables
+
+## 1.0.11 - 2020-11-7
+### Fixed
+- Resolve error with getFrontEndInputHtml that would cause a PHP compile error
